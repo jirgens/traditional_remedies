@@ -1,0 +1,29 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %title Traditional Remedy Resource
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"}
+    %link{href: "stylesheets/elastislide.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "stylesheets/custom.css", rel: "stylesheet", type: "text/css"}/
+    %script{src: "javascripts/modernizr.custom.17475.js"}
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield(:head)
+    :css
+      body {
+          margin-top: 60px;
+      }
+  %body
+    = render 'layouts/navigation'
+    .container
+      .row
+        .col-lg-12
+          = render 'layouts/messages'
+          = yield
+    %script{src: "javascripts/jquery-1.10.2.js"}
+    %script{src: "javascripts/bootstrap.js"}
