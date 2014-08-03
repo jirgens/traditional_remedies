@@ -88,7 +88,7 @@ GEM
       request_store (~> 1.0.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    excon (0.38.0)
+    excon (0.13.0)
     execjs (2.2.1)
     fabrication (2.11.3)
     faker (1.4.2)
@@ -99,29 +99,16 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    fog (1.23.0)
-      fog-brightbox
-      fog-core (~> 1.23)
-      fog-json
-      fog-softlayer
-      ipaddress (~> 0.5)
-      nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.1.1)
-      fog-core (~> 1.22)
-      fog-json
-      inflecto
-    fog-core (1.23.0)
+    fog (1.3.1)
       builder
-      excon (~> 0.38)
-      formatador (~> 0.2)
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
       mime-types
-      net-scp (~> 1.1)
-      net-ssh (>= 2.1.3)
-    fog-json (1.0.0)
       multi_json (~> 1.0)
-    fog-softlayer (0.3.11)
-      fog-core
-      fog-json
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
     formatador (0.2.5)
     haml (4.0.5)
       tilt
@@ -134,16 +121,11 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.2.0)
-    heroku-api (0.3.19)
-      excon (~> 0.38)
-      multi_json (~> 1.8)
     hike (1.2.3)
     i18n (0.6.11)
-    inflecto (0.0.2)
     inherited_resources (1.5.0)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0)
-    ipaddress (0.8.0)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -162,21 +144,14 @@ GEM
     mime-types (1.25.1)
     mini_magick (3.8.0)
       subexec (~> 0.2.1)
-    mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
     multipart-post (2.0.0)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
     net-ssh (2.9.1)
     netrc (0.7.7)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
-    paratrooper (2.4.1)
-      excon
-      heroku-api (~> 0.3)
-      netrc (~> 0.7)
-      rendezvous (~> 0.0.1)
+    nokogiri (1.5.11)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
@@ -214,7 +189,6 @@ GEM
     redis (3.1.0)
     redis-namespace (1.5.0)
       redis (~> 3.0, >= 3.0.4)
-    rendezvous (0.0.2)
     request_store (1.0.7)
     responders (1.1.0)
       railties (>= 3.2, < 5)
@@ -237,6 +211,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.3)
+    ruby-hmac (0.4.0)
     rubyzip (1.1.6)
     safe_yaml (1.0.3)
     sass (3.2.19)
@@ -308,6 +283,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
     websocket (1.0.7)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -338,10 +314,10 @@ DEPENDENCIES
   launchy
   letter_opener
   mini_magick
-  paratrooper
   pg
   pry
   pry-nav
+  rack
   rails (= 4.1.1)
   rails_12factor
   rspec-rails
@@ -359,3 +335,4 @@ DEPENDENCIES
   turbolinks
   uglifier
   webmock
+  will_paginate (~> 3.0)

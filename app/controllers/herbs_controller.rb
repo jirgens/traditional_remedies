@@ -1,14 +1,14 @@
 class HerbsController < InheritedResources::Base
   actions :new, :edit, :show, :update
 
+
   def index
     if params[:tag]
-      @herbs = Herb.tagged_with(params[:tag])
+      @herbs = Herb.tagged_with(params[:tag]).paginate(:per_page => 8, :page => params[:page])
     else
-      @herbs = Herb.all.order(:name).group(:name)
+      @herbs = Herb.order(:name).group(:name).paginate(:per_page => 8, :page => params[:page])
     end
   end
-
 
   def create
     @herb = Herb.new(herb_params)
@@ -21,10 +21,8 @@ class HerbsController < InheritedResources::Base
     end
   end
 
-
-
   private
   def herb_params
-    params.require(:herb).permit(:name, :latin_name, :description, :tag_list)
+    params.require(:herb).permit(:name, :latin_name, :description, :tag_list, :tag)
   end
 end

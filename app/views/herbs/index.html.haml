@@ -1,13 +1,16 @@
-%article
-  - @herbs.each do |herb|
-    %well.col-md-8
-      %br
-      %span.h3= herb.name
-      %br
-      %br
-      %span.h5= herb.latin_name
-      %br
-      %br
-      %p= herb.description
-      %br
-      %p Associated Ailments: #{raw herb.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')}
+= render 'layouts/header', title: "Traditional Herbal Remedies"
+%container
+  %article
+    - @herbs.each do |herb|
+      %well.col-md-8
+        %br
+        %span.h3= herb.name
+        %br
+        %br
+        %span.h5= herb.latin_name
+        %br
+        %br
+        %p= herb.description
+        %br
+        %p Associated Ailments: #{raw herb.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')}
+  = will_paginate @herbs

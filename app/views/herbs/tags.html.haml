@@ -1,0 +1,6 @@
+= render 'layouts/header', title: "Common Ailments"
+
+%container
+  #tag_cloud
+    - tag_cloud Herb.tag_counts, %w[s m l] do |tag, css_class|
+      = link_to tag.name, tag_path(tag.name), class: css_class

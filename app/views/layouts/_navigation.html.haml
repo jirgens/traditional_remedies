@@ -1,13 +1,14 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
-  .container
+  .container-fluid
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+      %button.navbar-toggle{"data-target" => "#navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %ul.nav.navbar-nav
-        %li= link_to "Traditional Remedy Resource", root_path, :class => 'brand'
-        %li= link_to "Herbs", root_path
-        %li= link_to "Ailments", ''
-        %li= link_to "About", ''
+      %a.navbar-brand{href: root_path} Traditional Remedy Resource
+      .collapse.navbar-collapse.navbar-left#navbar-ex1-collapse
+        %ul.nav.navbar-nav
+          %li= link_to "Herbs", root_path
+          %li= link_to "Ailments", herbs_tags_path
+          %li= link_to "About", about_path
