@@ -5,8 +5,10 @@ class HerbsController < InheritedResources::Base
   def index
     if params[:tag]
       @herbs = Herb.tagged_with(params[:tag]).paginate(:per_page => 8, :page => params[:page])
+      @title = ActsAsTaggableOn::Tag.find_by_name(params[:tag]).to_s.titleize
     else
       @herbs = Herb.order(:name).group(:name).paginate(:per_page => 8, :page => params[:page])
+      @title = "Traditional Remedies"
     end
   end
 
