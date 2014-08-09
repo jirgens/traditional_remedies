@@ -5,7 +5,6 @@ gem 'coffee-rails'
 gem 'rails', '4.1.1'
 gem 'haml-rails'
 gem 'sass-rails'
-gem 'sqlite3'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap_form'
@@ -53,6 +52,7 @@ group :test, :development do
   gem "rspec-rails"
   gem "fabrication"
   gem "faker"
+  gem 'sqlite3'
 end
 
 group :production do
