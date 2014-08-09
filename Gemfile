@@ -9,12 +9,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap_form'
 gem 'bcrypt-ruby'
-gem 'sidekiq'
 gem 'sentry-raven'
-# gem 'paratrooper'
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'fog'
 gem 'stripe'
 gem 'stripe_event'
 gem 'figaro'
@@ -34,7 +29,6 @@ group :development do
   gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'letter_opener'
   gem 'spring'
 end
 
@@ -42,7 +36,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
-  gem 'capybara-email', github: 'dockyard/capybara-email'
   gem 'webmock'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
