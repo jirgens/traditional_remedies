@@ -35,8 +35,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (3.3.0)
+    acts-as-taggable-on (3.1.1)
+      actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
+      activesupport (>= 3, < 5)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
@@ -291,7 +293,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
+  acts-as-taggable-on (~> 3.1.1)
   bcrypt-ruby
   better_errors
   binding_of_caller

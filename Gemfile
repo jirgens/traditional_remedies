@@ -23,7 +23,7 @@ gem 'inherited_resources'
 gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 3.1.1'
 gem 'will_paginate', '~> 3.0'
 gem 'rack'
 
